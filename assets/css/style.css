@@ -14,23 +14,6 @@ body {
     color: #356677;
 }
 
-.title-main {
-    display: inline;
-}
-
-.img-main {
-    display: inline;
-}
-
-
-.img-main img {
-    height: fit-content;
-    width: 100%;
-    object-fit: cover;
-    object-position: right;
-    margin-top: 5em;
-}
-
 /* 400 pixels de tela */
 @media (min-width: 350px) {
     body {
@@ -50,11 +33,35 @@ body {
     }
 }
 
+.title-main {
+    display: inline;
+}
+
+.img-main {
+    display: inline;
+}
+
+
+.img-main img {
+    height: fit-content;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
+    margin-top: 5em;
+}
+
+
 header {
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 300px) {
+    .img-main img {
+        margin-bottom: 5em;
+    }
 }
 
 .menu {
@@ -82,6 +89,12 @@ header {
     display: block;
     padding: 10px 20px;
     transition: background-color 1s, color 1s;
+}
+
+@media (max-width: 500px) {
+    .menu a {
+        padding: 2em 2em;
+    }
 }
 
 .menu a:hover{
@@ -139,46 +152,13 @@ a {
     clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 }
 
-/* 400 pixels de tela */
-@media (min-width: 350px) {
-    .sobre img {
-        float: right;
-        margin-left: 2em;
-        margin-bottom: 2em;
-        width: 400px;
-        height: 400px;
-        clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-    }
-}
-
-@media (min-width:1200px) {
-    .container {
-        max-width: 1200px;
-        margin-left : auto;
-        margin-right: auto;
-    }
-} 
 
 .portfolio .grid {
     display: grid;
     gap: 2em;
 }
 
-@media (min-width: 560px) {
-    .portfolio .grid {
-        grid-template-columns: 240px 240px;
-    }
-    
-}
 
-@media (min-width: 880px) {
-    .portfolio .grid {
-        grid-template-columns: repeat(3,240px);
-        align-content: center;
-        justify-content: center;
-        height: calc(100vh - 5.5em - 48px);
-    }
-}
 
 .portfolio figure {
     text-align: center;
@@ -187,7 +167,6 @@ a {
 .sobre h2,
 .contato h2,
 .portfolio h2 {
-    font-family: 'Press Start 2P', cursive;
     margin-bottom: 1.6em;
     font-size: 2em;
 }
@@ -267,4 +246,62 @@ a {
 
 
 
+/* 400 pixels de tela */
+@media (max-width: 500px) {
+    .sobre img {
+        float: none;
+        margin-left: 0px;
+        width: 300px;
+        height: 300px;
+        border-radius: 150px;
+        clip-path: none;
+    }
 
+    .sobre h2, .contato h2, .portfolio h2 {
+        margin-top: 2.6em;
+        font-size: 2em;
+    }
+
+    .sobre p {
+        margin-bottom: 0px;
+        text-align: center;
+        text-indent: 0px;
+        font-size: 22px;
+    }
+
+    .portfolio figure {
+        margin-top: 1em;
+    }
+
+     figcaption {
+        font-size: 1.8em;
+    }
+
+    .flip-card {
+        margin-bottom: 2em;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1200px;
+        margin-left : auto;
+        margin-right: auto;
+    }
+} 
+
+@media (min-width: 560px) {
+    .portfolio .grid {
+        grid-template-columns: 240px 240px;
+    }
+    
+}
+
+@media (min-width: 880px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(3,240px);
+        align-content: center;
+        justify-content: center;
+        height: calc(100vh - 5.5em - 48px);
+    }
+}
